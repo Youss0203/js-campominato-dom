@@ -5,6 +5,26 @@ Quando l'utente clicca su ogni cella, la cella cliccata si colora di azzurro ed
 emetto un messaggio in console con il numero della cella cliccata.
  */
 
+/*Il computer deve generare 16 numeri casuali nello stesso range della 
+difficoltà prescelta: le bombe.
+Attenzione: 
+nella stessa cella può essere posizionata al massimo una bomba, 
+perciò nell’array delle 
+bombe non potranno esserci due numeri uguali. */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 const newGridElement = document.querySelector("section.main-content")
@@ -12,9 +32,9 @@ const newGridElement = document.querySelector("section.main-content")
 const btnElement = document.querySelector("button")
 
 btnElement.addEventListener("click", function () {
-    
-    newGridElement.innerHTML=""
-    
+
+    newGridElement.innerHTML = ""
+
     for (let i = 1; i <= 100; i++) {
 
         const currentSquare = newSquareElement();
@@ -31,6 +51,20 @@ btnElement.addEventListener("click", function () {
     }
 })
 
+function generaNumeriCasuali() {
+    const numeriCasuali = [];
+    const min = 1;
+    const max = 100;
+
+while (numeriCasuali.length < 16) {
+    const randomNumber = numeroRandom
+
+    if (!numeriCasuali.includes(randomNumber)) {
+        numeriCasuali.push(randomNumber)
+    }
+    return numeriCasuali
+}
+}
 
 
 
@@ -42,6 +76,10 @@ function newSquareElement() {
 }
 
 
+
+function numeroRandom(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
 /*function getRandomNumber(){
     return Math.floor( Math.random()*99)+1;
 }*/

@@ -36,7 +36,9 @@ btnElement.addEventListener("click", function () {
     newGridElement.innerHTML = ""
 
     const generatoreBombe = generaNumeriCasuali(16)
-        let risultatoPlayer=0;
+    console.log(generatoreBombe)
+    
+    let risultatoPlayer=0;
 
     for (let i = 1; i <= 100; i++) {
 
@@ -72,16 +74,12 @@ btnElement.addEventListener("click", function () {
 
 
 
-
-
 function generaNumeriCasuali(numeroBombe) {
     const numeriCasuali = [];
-    const min = 1;
-    const max = 100;
-
+    
     while (numeriCasuali.length < numeroBombe) {
-        const randomNumber = numeroRandom
-
+        const randomNumber = numeroRandom(1 , 100)
+        console.log(randomNumber)
         if (!numeriCasuali.includes(randomNumber)) {
             numeriCasuali.push(randomNumber)
         }
@@ -90,7 +88,7 @@ function generaNumeriCasuali(numeroBombe) {
 }
 
 
-
+ 
 
 
 

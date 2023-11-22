@@ -1,0 +1,47 @@
+.d-flex {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+main{
+    background-color: #7FFFD4;
+}
+.main-content {
+    width: 550px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+img{
+    width: 300px;
+}
+.flex{
+    display: flex;
+}
+
+h1{
+    padding-left:2rem;
+}
+
+article.square {
+    width: calc(100% / 11);
+    height: calc(100% / 11);
+    border: 2px solid black;
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+
+button{
+    padding: 1rem 2rem;
+    margin-top:1rem
+}
+
+.cliccked{
+    background-color: rgb(75, 214, 245);
+}

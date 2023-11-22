@@ -35,6 +35,9 @@ btnElement.addEventListener("click", function () {
 
     newGridElement.innerHTML = ""
 
+    const generatoreBombe = generaNumeriCasuali(16)
+        let risultatoPlayer=0;
+
     for (let i = 1; i <= 100; i++) {
 
         const currentSquare = newSquareElement();
@@ -43,11 +46,25 @@ btnElement.addEventListener("click", function () {
         currentSquare.innerHTML += `<span> ${squareContent} </span>`
 
         currentSquare.addEventListener('click', function () {
-            currentSquare.classList.toggle('cliccked');
+            currentSquare.classList.add('cliccked');
             console.log(squareContent)
         });
 
         newGridElement.appendChild(currentSquare)
+
+        
+        
+        currentSquare.addEventListener("click", function(){
+                if(risultatoPlayer === 100 - generatoreBombe){
+                alert(`sei fortissimo hai vinto ${risultatoPlayer}`)
+                }else if(generatoreBombe.includes(squareContent)){
+                    currentSquare.classList.add("bg-red")
+                    alert(`ritirati questo gioco non fa per te ${risultatoPlayer}`)
+                }else{
+                    currentSquare.classList.add("bg-blue")
+                    risultatoPlayer += 1;
+                }
+        })
     }
 })
 
@@ -57,12 +74,12 @@ btnElement.addEventListener("click", function () {
 
 
 
-function generaNumeriCasuali() {
+function generaNumeriCasuali(numeroBombe) {
     const numeriCasuali = [];
     const min = 1;
     const max = 100;
 
-    while (numeriCasuali.length < 16) {
+    while (numeriCasuali.length < numeroBombe) {
         const randomNumber = numeroRandom
 
         if (!numeriCasuali.includes(randomNumber)) {
@@ -74,26 +91,7 @@ function generaNumeriCasuali() {
 
 
 
-articleElement.addEventListener("click", function () {
-    if (newSquareElement) {
-        articleElement.classList.add("bg-blue")
-        const gridClick = numero;
-        console.log(gridClick)
 
-
-
-
-        if (numeriUnici.includes(gridClick)) {
-            articleElement.classList.add("bg-red");
-            articleElement.innerHTML = "Hai perso";
-            console.log("Hai perso");
-        } else {
-            console.log("Continua giocando");
-            articleElement.innerHTML = "Continua";
-        }
-    }
-    return articleElement
-})
 
 
 
@@ -105,6 +103,7 @@ function newSquareElement() {
     articleElement.classList.add("square");
     return articleElement;
 }
+
 
 
 

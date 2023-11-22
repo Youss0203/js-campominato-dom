@@ -45,3 +45,12 @@ button{
 .cliccked{
     background-color: rgb(75, 214, 245);
 }
+
+
+.bg-blue{
+    background-color:rgb(75, 214, 245);
+}
+
+.bg-red{
+    background-color: red;
+}

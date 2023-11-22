@@ -51,20 +51,51 @@ btnElement.addEventListener("click", function () {
     }
 })
 
+
+
+
+
+
+
 function generaNumeriCasuali() {
     const numeriCasuali = [];
     const min = 1;
     const max = 100;
 
-while (numeriCasuali.length < 16) {
-    const randomNumber = numeroRandom
+    while (numeriCasuali.length < 16) {
+        const randomNumber = numeroRandom
 
-    if (!numeriCasuali.includes(randomNumber)) {
-        numeriCasuali.push(randomNumber)
+        if (!numeriCasuali.includes(randomNumber)) {
+            numeriCasuali.push(randomNumber)
+        }
+        return numeriCasuali
     }
-    return numeriCasuali
 }
-}
+
+
+
+articleElement.addEventListener("click", function () {
+    if (newSquareElement) {
+        articleElement.classList.add("bg-blue")
+        const gridClick = numero;
+        console.log(gridClick)
+
+
+
+
+        if (numeriUnici.includes(gridClick)) {
+            articleElement.classList.add("bg-red");
+            articleElement.innerHTML = "Hai perso";
+            console.log("Hai perso");
+        } else {
+            console.log("Continua giocando");
+            articleElement.innerHTML = "Continua";
+        }
+    }
+    return articleElement
+})
+
+
 
 
 
